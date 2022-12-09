@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block title %}Values{% endblock %}
+{% block content %}
+<form action="/update" method="POST">
+  <div class="container "id="content">
+    <div class="row">
+      {% for category in values_data %}
+      <div class="col">
+        <table class="table table-hover table-draggable" draggable="true">
+          <thead id="value-head">
+            <tr>
+              <th>
+                <div class="container">
+                  <div class="row" id="value-row">
+                    <div class="col-9 category" id="value-changeable">{{category.category}}</div>
+                    <div class="col-3"><button class="value-button" id="value-edit-button" type="button">Edit</button></div>
+                  </div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          {% for value in category.values %}
+          <tbody id="value-body">
+            <tr class="value-draggable" draggable="true">
+              <td>
+                <div class="container">
+                  <div class="row" id="value-row">
+                    <div class="col-9 value" id="value-changeable">{{value}}</div>
+                    <div class="col-3"><button class="value-button" id="value-edit-button" type="button">Edit</button></div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+          {% endfor %}
+        </table>
+      </div>
+      {% endfor %}   
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <button class="value-button" type="button" onclick="saveValues()">Save Values</button>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}

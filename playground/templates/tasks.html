@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %}Tasks{% endblock %}
+{% block content %}
+<div class="container "id="content">
+  <div class="row">
+    <div class="col"> 
+      <table class="table table-hover">
+        <thead><tr>
+        {% for column in columns %}
+          <th>{{column}}</th>
+        {% endfor %}
+        </tr></thead>
+        {% for value_list in values %}
+          <tbody><tr>
+            {% for value in value_list %}
+            <td>{{value}}</td>
+            {% endfor %}
+          </tr></tbody>
+        {% endfor %}
+      </table>
+    </div>   
+  </div>
+</div>
+{% endblock %}

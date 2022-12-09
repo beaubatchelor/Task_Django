@@ -1,0 +1,15 @@
+.dragging {
+    opacity: .5;
+}
+
+.value-button {
+    cursor: pointer;
+}
+
+.value-draggable {
+    cursor: grab;
+}
+
+.dragging {
+    cursor: grabbing;
+}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}Organizations{% endblock %}
+{% block content %}
+<div class="container "id="content">
+  <div class="row">
+    <div class="col">
+      <table class="table table-hover">
+        <thead><tr><th>Organizations</th></tr></thead>
+        <tbody>
+          {% for org in org_data %}
+              <tr>
+                <td>{{org}}</td>
+                <td><a href="/playground/values">Values</a></td>
+                <td><a href="/playground/tasks">Tasks</a></td>
+              </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>   
+  </div>
+</div>
+{% endblock %}
